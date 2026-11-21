@@ -4,7 +4,8 @@ function setTheme(theme) {
 }
 const saved = localStorage.getItem('theme') || 'light';
 setTheme(saved);
-// document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener("gesturestart", e => e.preventDefault());
 function goBack() {
     if (window.history.length > 1) {
         window.history.back();
