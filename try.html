@@ -446,7 +446,6 @@ header .back-btn svg,
     border-radius: 99px;
     font-size: 15px;
     cursor: pointer;
-    transition: background 0.15s, border-color 0.15s;
     white-space: nowrap;
     box-shadow: inset 0.9px 0.9px 0px 0px #ffffff17, inset -0.9px -0.9px 0px 0px #ffffff17;
     filter: drop-shadow(0px 0px 6px #0000002b);
@@ -808,10 +807,12 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     .fee-result-row { display:flex; justify-content:space-between; gap:12px; padding:7px 0; font-size:14px; }
     .fee-result-row.total { border-top:1px solid var(--border); margin-top:6px; padding-top:13px; font-weight:700; font-size:16px; }
     .fee-rate-note { color:var(--text-secondary); font-size:12px; margin-top:8px; line-height:1.5; }
-    .chat-solution-ad-wrap {     padding: 5px 10px 10px;
+    .chat-solution-ad-wrap {padding: 20px 10px 0 10px;
     position: sticky;
-    top: 65px;
-    z-index: 10;}
+    top: 50px;
+    z-index: 10;
+    backdrop-filter: blur(2px);
+    margin-top: -15px;}
     button.chat-solution-ad div {
    width: 2.5px;
     height: 40px;
@@ -946,11 +947,11 @@ color-mix(in srgb, var(--primary) 18%, transparent);
       flex: 1;
     }
     .chat-messages {
-         min-height: 160px;
+        min-height: 160px;
     max-height: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding-top: 5px;
+    padding-top: 10px;
     }
     .options-row { display: flex;
     gap: 8px;
