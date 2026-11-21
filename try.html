@@ -722,20 +722,7 @@ span.menu-option-icon svg {
       background: #d8dadf;
     }
 
-    .header-heading {min-width: 0;
-    box-shadow: inset 0.9px 0.9px 0px 0px #ffffff17, inset -0.9px -0.9px 0px 0px #ffffff17;
-    filter: drop-shadow(0px 0px 6px #0000002b);
-    border: none;
-    color: var(--text);
-    backdrop-filter: blur(2px);
-    background: var(--bg-secondary);
-    border-radius: 99px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 20px;
-    width: fit-content;}
+    .header-heading { flex: 1; min-width: 0; }
     .header-more {
       width: 45px;
 height: 45px;
@@ -820,13 +807,14 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     .fee-result-row { display:flex; justify-content:space-between; gap:12px; padding:7px 0; font-size:14px; }
     .fee-result-row.total { border-top:1px solid var(--border); margin-top:6px; padding-top:13px; font-weight:700; font-size:16px; }
     .fee-rate-note { color:var(--text-secondary); font-size:12px; margin-top:8px; line-height:1.5; }
-    .chat-solution-ad-wrap {padding: 20px 10px 0 10px;
+    .chat-solution-ad-wrap {
+     padding: 5px 10px 0 10px;
     position: sticky;
-    top: 50px;
-    z-index: 10;
-    backdrop-filter: blur(3px);
-    margin-top: -15px;
-    border-radius: 0 0 86px 90px;}
+    top: 65px;
+    z-index: 1;
+    margin-top: 0;
+    border-radius: 0 0 86px 90px;
+  }
     button.chat-solution-ad div {
    width: 2.5px;
     height: 40px;
@@ -864,20 +852,39 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     .chat-solution-ad-copy span { color:var(--text-secondary); font-size:12px; line-height:1.35; }
     .chat-solution-ad-arrow { color: var(--primary);
     display: inline-flex; }
-    .chat-share-row { padding: 0 12px max(12px, env(safe-area-inset-bottom, 0px));z-index: 1;;
+    .chat-share-row { z-index: 1;;
     background: var(--bg);}
-    .chat-share-btn { 
-      width: 100%;
-    padding: 12px 16px;
+    .chat-share-btn a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.chat-share-btn button {
+    font-size: 18px;
+    font-weight: 900;
+    background: transparent;
+    outline: none;
+    color: white;
     border: none;
-    border-radius: 22px;
+}
+    .chat-share-btn { 
+    width: 100%;
+    padding: 15px 15px 30px 15px;
+    border: none;
+    border-radius: 20px 20px 35px 35px;
     background: var(--primary);
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 900;
     cursor: pointer;
     color: var(--text);
     max-width: 535px;
+    margin: 0;
     }
+    .chat-share-btn svg {
+    width: 35px;
+    height: 35px;
+}
     html, body {
       width: 100%;
       min-height: 100%;
@@ -930,7 +937,7 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     min-height: 0;
     overflow: visible;
     width: 100%;
-    padding-top: 0px;
+    padding-top: 15px;
     padding-bottom: 75px;
     }
     .services-grid {
@@ -969,11 +976,12 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     }
     .options-row { display: flex;
     gap: 8px;
-    padding: 15px 10px;
+    padding: 15px;
     position: sticky;
     bottom: 0px;
     overflow: scroll;
-    scrollbar-width: none;z-index: 1;
+    scrollbar-width: none;
+    z-index: 1;
     background: linear-gradient( 0deg, var(--bg), transparent);}
     .page-overlay { height: 100vh; height: 100dvh; }
     .page-content {
@@ -1003,20 +1011,18 @@ color-mix(in srgb, var(--primary) 18%, transparent);
       isolation: isolate;
     }
     #app-header {
+     flex: 0 0 auto;
     min-height: 58px;
     height: auto;
     z-index: 30;
     position: fixed;
     width: 100%;
-    /* background: linear-gradient( 180deg, var(--bg), transparent); */
+    background: linear-gradient( 180deg, var(--bg), transparent);
     left: 0;
     top: 0;
     text-align: center;
     padding: 15px 10px;
     border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     }
      #app-header::before {
     content: "";
@@ -1024,7 +1030,7 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0px;
+    bottom: -10px;
     z-index: -1;
     pointer-events: none;
     backdrop-filter: blur(10px);
@@ -1159,9 +1165,6 @@ color-mix(in srgb, var(--primary) 19%, transparent);
   <!-- APP -->
   <div id="app">
     <header id="app-header">
-      <div>
-        <img style="width: 40px;border-radius: 50%;" src="https://mfi0212.github.io/mfi.f/mfi.gif" alt="">
-      </div>
       <button class="back-btn" id="back-btn" style="display:none;padding: 2px 0 0 0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M9.18,12l7.53,7.53q0.3,0.3 0.29,0.7t-0.31,0.7T16,21.23t-0.7-0.3L7.63,13.28q-0.27-0.27-0.4-0.61T7.09,12t0.13-0.67t0.4-0.61L15.3,3.05q0.3-0.3 0.71-0.29t0.71,0.31t0.3,0.7t-0.3,0.7L9.18,12Z"/></svg></button>
       <div class="header-heading">
         <div class="title" id="header-title">Amounts</div>
@@ -1185,7 +1188,13 @@ color-mix(in srgb, var(--primary) 19%, transparent);
         <div class="chat-container">
           <div class="chat-messages" id="chat-messages"></div>
           <div class="options-row" id="options-row"></div>
-          <div class="chat-share-row"><a href="https://mfi0212.github.io/mfi.f/abt.hlp"><button class="chat-share-btn" id="share-loan-details" type="button">I have an issue</button></a></div>
+          <div class="chat-share-row">
+            <div class="chat-share-btn">
+              <a href="https://mfi0212.github.io/mfi.f/abt.hlp" id="share-loan-details"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M16.31,8.75q0.13-0.13 0.13-0.31V5.54q0-0.18-0.13-0.31T16,5.1T15.69,5.23T15.56,5.54v2.9q0,0.18 0.13,0.31T16,8.88t0.31-0.13Zm0.04,2.04q0.15-0.15 0.15-0.35t-0.15-0.35T16,9.94t-0.35,0.15T15.5,10.44t0.15,0.35T16,10.94t0.35-0.15ZM4.25,19.75q-0.32,0-0.53-0.22T3.5,19t0.22-0.53t0.53-0.22h10q0.32,0 0.53,0.22T15,19t-0.22,0.53t-0.53,0.22h-10Zm8.39-8.39Q11.25,9.97 11.25,8t1.39-3.36T16,3.25t3.36,1.39T20.75,8t-1.39,3.36T16,12.75t-3.36-1.39ZM4.25,11.75q-0.32,0-0.53-0.22T3.5,11t0.22-0.53t0.53-0.22H8.87q0.32,0 0.53,0.21T9.62,11q0,0.3-0.22,0.53T8.87,11.75H4.25Zm0,4q-0.32,0-0.53-0.22T3.5,15t0.22-0.53t0.53-0.22H12.5q0.32,0 0.53,0.21T13.25,15q0,0.3-0.2,0.53T12.5,15.75H4.25Z"/></svg> 
+              <button  type="button">I have an issue here</button>
+              <p></p></a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1232,7 +1241,7 @@ color-mix(in srgb, var(--primary) 19%, transparent);
 <script src="https://mfi0212.github.io/MFI/new-service-amount-details.js"></script>
           <h3>Pages</h3>
           <div class="settings-section">
-            <a href="https://mfi0212.github.io/mfi.f/new.service"><div class="settings-item">
+            <a href="https://mfi0212.github.io/mfi.f/main"><div class="settings-item">
               <div class="left"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M4.5,19V10.15q0-0.43 0.19-0.81T5.22,8.71l5.69-4.29Q11.39,4.06 12,4.06t1.09,0.36l5.69,4.29q0.34,0.25 0.53,0.63t0.19,0.81V19q0,0.61-0.44,1.06T18,20.5H14.81q-0.38,0-0.64-0.26T13.9,19.6V14.71q0-0.38-0.26-0.64T13,13.81H11q-0.38,0-0.64,0.26T10.1,14.71V19.6q0,0.38-0.26,0.64T9.19,20.5H6q-0.61,0-1.06-0.44T4.5,19Z"/></svg></span><span>BS&MFI home page</span></div>
               <span class="arrow">›</span>
             </div></a>
@@ -1581,7 +1590,7 @@ color-mix(in srgb, var(--primary) 19%, transparent);
       currentLoanIndex = index;
       const loan = currentUser.loans[index];
       document.getElementById("header-title").textContent = formatMoney(loan.amount);
-      document.getElementById("header-sub").textContent = `You loan ${index + 1} details`;
+      document.getElementById("header-sub").textContent = `Loan ${index + 1}`;
       document.getElementById("back-btn").style.display = "block";
       document.getElementById("bottom-nav").style.display = "none";
       document.getElementById("header-menu").classList.remove("open");
