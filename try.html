@@ -1438,7 +1438,7 @@ const COLORS = [
     }
 
     function buildLoanShareText(loan, index) {
-      return `BS&MFI Services\n\n · Loan ${index + 1}\nAmount: ${formatMoney(loan.amount)}\nInterest: ${formatMoney(loan.interest)}\nBorrowed on: ${formatDate(loan.borrowed)}\nReturn on: ${formatDate(loan.return)}\nOverdue days: ${getOverdueDays(loan)}\nOverdue fine: ${formatMoney(getOverdueFine(loan))}`;
+      return `BS&MFI Services\n\n · Loan ${index + 1}\nAmount: ${formatMoney(loan.amount)}\nBorrowed on: ${formatDate(loan.borrowed)}`;
     }
 
     async function shareLoanDetails(loan, index) {
