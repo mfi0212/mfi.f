@@ -971,7 +971,7 @@ button.chat-solution-ad {
       <div class="login-title">Password Required</div>
       <div class="login-sub">Enter password to continue</div>
       <div class="input-group">
-        <input type="password" id="password-input" placeholder="Enter password" autocomplete="current-password" />
+        <input type="text" id="password-input" placeholder="Enter password" autocomplete="current-password" />
       </div>
       <button class="btn" id="login-btn">Login</button>
       <div class="error-msg" id="login-error"></div>
@@ -1447,7 +1447,7 @@ const COLORS = [
       url.searchParams.set("loan", String(index));
       url.searchParams.set("owner", currentUser.key);
       const link = url.toString();
-      const payload = `${text}\n\nView this specific loan details by entering the account password: ${link}\n`;
+    //   const payload = `${text}\n\nView this specific loan details by entering the account password: ${link}\n`;
       try {
         if (navigator.share) {
           await navigator.share({ title: `BS&MFI Services\n\n· ${formatMoney(loan.amount)}`, text: payload});
