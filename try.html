@@ -1447,7 +1447,7 @@ const COLORS = [
       url.searchParams.set("loan", String(index));
       url.searchParams.set("owner", currentUser.key);
       const link = url.toString();
-      const payload = `${text}\n\nView full loan details in account: ${link}\n`;
+      const payload = `${text}\n\nView full loan details in account\n`;
       try {
         if (navigator.share) {
           await navigator.share({ title: `BS&MFI Services\n\n· ${formatMoney(loan.amount)}`, text: payload});
