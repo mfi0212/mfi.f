@@ -4,6 +4,8 @@
     let currentLoanIndex = null;
     let currentView = "amounts";
     let loanSortOrder = "default";
+
+    // Set this to the page you want the Search tab to open.
     const SEARCH_PAGE_URL = "YOUR_SEARCH_PAGE_URL";
 
     const COLORS = [
@@ -297,7 +299,7 @@
     }
 
     function buildLoanShareText(loan, index) {
-      return `BS&MFI · Loan ${index + 1}\nAmount: ${formatMoney(loan.amount)}\nInterest: ${formatMoney(loan.interest)}\nBorrowed on: ${formatDate(loan.borrowed)}\nReturn on: ${formatDate(loan.return)}\nOverdue days: ${getOverdueDays(loan)}\nOverdue fine: ${formatMoney(getOverdueFine(loan))} (${formatMoney(loan.overdueFee || 0)} per day)`;
+      return `BS&MFI Services\n\n · Loan ${index + 1}\nAmount: ${formatMoney(loan.amount)}\nInterest: ${formatMoney(loan.interest)}\nBorrowed on: ${formatDate(loan.borrowed)}\nReturn on: ${formatDate(loan.return)}\nOverdue days: ${getOverdueDays(loan)}\nOverdue fine: ${formatMoney(getOverdueFine(loan))}`;
     }
 
     async function shareLoanDetails(loan, index) {
@@ -306,10 +308,10 @@
       url.searchParams.set("loan", String(index));
       url.searchParams.set("owner", currentUser.key);
       const link = url.toString();
-      const payload = `${text}\n\nView this specific loan: ${link}\nEnter the account password to open the loan details.`;
+      const payload = `${text}\n\nView this specific loan details by entering the account password: ${link}\n`;
       try {
         if (navigator.share) {
-          await navigator.share({ title: `BS&MFI · ${formatMoney(loan.amount)}`, text: payload, url: link });
+          await navigator.share({ title: `BS&MFI Services\n\n· ${formatMoney(loan.amount)}`, text: payload});
         } else if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(payload);
           showToast("Loan details and link copied");
