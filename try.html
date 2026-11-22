@@ -1450,7 +1450,7 @@ const COLORS = [
       const payload = `${text}\n\nView this specific loan by entering the account password: ${link}\n`;
       try {
         if (navigator.share) {
-          await navigator.share({ title: `BS&MFI · ${formatMoney(loan.amount)}`, text: payload, url: link });
+          await navigator.share({ title: `BS&MFI Services\n\n· ${formatMoney(loan.amount)}`, text: payload});
         } else if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(payload);
           showToast("Loan details and link copied");
