@@ -2105,6 +2105,7 @@ position: absolute;
     background: var(--bg-secondary);
     left: 50%;
     transform: translate(-50%, 0);
+    max-width: 550px;
     }
 
     .chat-suggestions[hidden] {
@@ -2120,12 +2121,12 @@ position: absolute;
     background: transparent;
     color: inherit;
     text-align: center;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
+    cursor: pointer;background: var(--bg);
     }
 
     .chat-suggestions button:hover {
-      background: var(--bg);
+     
+    backdrop-filter: blur(10px);
     }
 button#chat-menu-btn {
     background: var(--primary);
