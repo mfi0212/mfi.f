@@ -854,20 +854,25 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     display: inline-flex;
     fill: var(--text);
 }
-    .chat-share-row { padding: 0 12px max(12px, env(safe-area-inset-bottom, 0px));z-index: 1;;
-    background: var(--bg);}
+    .chat-share-row {padding: 0 12px max(12px, env(safe-area-inset-bottom, 0px));
+    z-index: 1;
+    text-align: center;}
     .chat-share-btn { 
       width: 100%;
     padding: 12px 16px;
     border: none;
     border-radius: 22px;
-    background: var(--primary);
+    background: #590000;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    color: var(--text);
+    color: white;
     max-width: 535px;
     }
+    .chat-share-btn:hover{ 
+        background:red;
+    }
+      
     html, body {
       width: 100%;
       min-height: 100%;
@@ -1935,8 +1940,8 @@ display: flex;
 
     #chat-save-toggle.active {
       color: var(--primary);
-      border-color: var(--primary);
-      background: color-mix(in srgb, var(--primary) 10%, transparent);
+    border-color: var(--primary);
+    background: var(--primary);
     }
 
     .chat-service-menu {
