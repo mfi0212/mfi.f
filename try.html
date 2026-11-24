@@ -3409,15 +3409,15 @@ function renderChatSolutionAd() {
   ad.type = "button";
   ad.className = "chat-solution-ad";
 
-  ad.innerHTML = `
-    <span class="chat-solution-ad-icon">${solution.icon}</span>
-    <span class="chat-solution-ad-copy">
-      <strong>${solution.key}</strong>
-      <span>${solution.desc}</span>
-    </span>
-    <span class="chat-solution-ad-arrow">›</span>
-  `;
-
+ ad.innerHTML = `
+        <div></div>
+            <span class="chat-solution-ad-icon" aria-hidden="true">${solution.icon}</span>
+            <span class="chat-solution-ad-copy">
+              <strong>${solution.key}</strong>
+              <span>${solution.desc}</span>
+            </span>
+            <span class="chat-solution-ad-arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M14.83,12L7.3,4.47Q7,4.17 7.01,3.76T7.31,3.05t0.71-0.3t0.71,0.3l7.66,7.67q0.27,0.27 0.4,0.61T16.92,12t-0.13,0.67t-0.4,0.61L8.72,20.95q-0.3,0.3-0.7,0.29t-0.7-0.31t-0.3-0.71t0.3-0.71L14.83,12Z"/></svg></span>
+          `;
   ad.onclick = () => {
     window.location.href = solution.url;
   };
