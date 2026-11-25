@@ -285,18 +285,20 @@ flex: 1;
     gap: 3px;
     cursor: pointer;
     border-radius: 999px;
-    transition: color 0.2s;
+    transition: color 0.3s ease-in-out;
     min-height: 50px;
     font-weight: 400;
     width: 100%;
     padding: 4px 20px;
     }
     nav.bottom-nav button.active {
-    background: 
-color-mix(in srgb, var(--primary) 19%, transparent);
+    background: color-mix(in srgb, var(--primary) 19%, transparent);
     color: var(--primary);
     fill: var(--primary);
-    }
+}
+nav.bottom-nav button:active {
+    transform: scale(0.90);
+}
     nav.bottom-nav button svg { width: 21px; height: 21px; }
    
 
@@ -325,7 +327,7 @@ color-mix(in srgb, var(--primary) 19%, transparent);
     align-items: center;
     gap: 14px;
     cursor: pointer;
-    transition: all 0.35s ease-in-out;
+    transition: all 0.2s ease-in-out;
     }
 .loan-item:active {
     transform: scale(0.98);
@@ -521,8 +523,7 @@ content: "";
     }
 
     .service-card.disabled {
-      opacity: 0.4;
-      pointer-events: none;
+      display: none;
     }
 
     .service-card .icon {
@@ -773,7 +774,8 @@ height: 45px;
     }
     .header-more:active { background: var(--bg-tertiary); }
 
-    .borrow-tools {width: 100%;
+    .borrow-tools {
+      width: 100%;
     max-width: 900px;
     margin: 0 auto;
     padding: 10px 10px 0 10px;
@@ -787,7 +789,6 @@ height: 45px;
     min-height: 75px;
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
     text-align: left;
     cursor: pointer;
     color: var(--text);
@@ -1080,7 +1081,7 @@ position: absolute;
     z-index: 50;
     display: none;
     right: 7px;
-    border-radius: 30px;
+    border-radius: 28px;
     top: 14px;
     color: var(--text);
     padding: 6px;
