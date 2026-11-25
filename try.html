@@ -271,20 +271,24 @@ header .back-btn svg,
 .settings-item svg {
     fill: var(--text);
 }
-    nav.bottom-nav button {
-      flex: 1;
-      background: none;
-      border: none;
-      color: var(--text);;
-      font-size: 11px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 3px;
-      cursor: pointer;
-      border-radius: 999px;
-      transition: color 0.2s;
+ 
+nav.bottom-nav button {
+flex: 1;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: color 0.2s;
+    min-height: 50px;
+    font-weight: 400;
+    width: 100%;
     }
     nav.bottom-nav button.active {
     background: 
@@ -979,18 +983,7 @@ width: 100%;
     border-radius: 999px;
     max-width: 370px;
     }
-    nav.bottom-nav button {
-     flex: 1 1 92px;
-    min-height: 50px;
-    gap: 3px;
-    font-size: 10px;
-    font-weight: 400;
-    padding: 5px 20px;
-    transition: background .2s ease, color .2s ease, transform .2s ease;
-    border-radius: 999px;
-    width: 100%;
-    }
-    nav.bottom-nav button svg { width: 22px; height: 22px; }
+
     .chat-container {
       min-height: 0;
       height: auto;
