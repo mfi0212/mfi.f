@@ -1,0 +1,1083 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f5f7">
+<title>BS&MFI | BsGifter My gifs</title>
+<link rel="icon" href="mfi.logo.png">
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #171717;
+    --muted: #888;
+    --accent: #5145e5;
+    --border: #e8e8ed;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.header {
+    height: 65px;
+    padding: 0 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.header-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+}
+
+.container {
+    width: min(800px, 92%);
+    margin: 45px auto;
+}
+
+/* LOGIN */
+
+.login-screen {
+    max-width: 410px;
+    margin: 75px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0,0,0,.04);
+}
+
+.login-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.login-screen h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.password-wrap {
+    position: relative;
+}
+
+.password-wrap input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border);
+    background: #fafafa;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+}
+
+.password-wrap input:focus {
+    border-color: var(--accent);
+}
+
+.show-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent);
+    color: white;
+    border-radius: 12px;
+    margin-top: 14px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.primary-btn:hover {
+    background: #4034ce;
+    transform: translateY(-2px);
+}
+
+.error {
+    color: #e53935;
+    font-size: 12px;
+    margin-top: 13px;
+    min-height: 16px;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    display: none;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 26px;
+    margin-bottom: 7px;
+}
+
+.welcome p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.logout {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 11px 17px;
+    border-radius: 10px;
+    color: #555;
+    font-size: 12px;
+}
+
+.summary {
+    background: linear-gradient(120deg, #5145e5, #8276ff);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary h2 {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.summary p {
+    font-size: 12px;
+    opacity: .85;
+}
+
+.summary-count {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* GIFT BOX CARDS */
+
+.gift-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gift-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: .25s;
+}
+
+.gift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.07);
+}
+
+.gift-click {
+    width: 100%;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-emoji {
+    width: 115px;
+    height: 115px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #f2edff, #e5ddff);
+    display: grid;
+    place-items: center;
+    font-size: 65px;
+    margin-bottom: 18px;
+    transition: .3s;
+}
+
+.gift-card:hover .gift-emoji {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+.gift-card h3 {
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+.gift-from {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.gift-date {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.tap-text {
+    margin-top: 17px;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.gift-status {
+    display: inline-block;
+    margin-top: 12px;
+    background: #eeedff;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.gift-status.opened {
+    background: #e7f7ec;
+    color: #23964c;
+}
+
+.empty {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 45px 15px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.empty div {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.empty p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* GIFT OPENING MODAL */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(20,20,30,.48);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.gift-modal {
+    background: white;
+    width: min(440px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 27px;
+    border-radius: 25px;
+    text-align: center;
+    animation: popup .3s ease;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(.85) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-top-emoji {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.gift-modal h2 {
+    font-size: 23px;
+    margin-bottom: 9px;
+}
+
+.modal-from {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.offer-image {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    border-radius: 14px;
+    display: none;
+    background: #f5f5f7;
+    margin-bottom: 18px;
+}
+
+.message-box {
+    background: #f7f6ff;
+    border-radius: 15px;
+    padding: 18px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.message-label {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.message-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+    white-space: pre-wrap;
+}
+
+.message-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.copy-message-btn {
+    background: white;
+    color: var(--accent);
+    border: 1px solid #e5e1ff;
+    border-radius: 9px;
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.copy-message-btn:hover {
+    background: #eeedff;
+}
+
+.modal-date {
+    color: #999;
+    font-size: 11px;
+    margin: 13px 0;
+}
+
+.visit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 17px;
+    transition: .2s;
+}
+
+.visit-btn:hover {
+    background: #4034ce;
+    transform: translateY(-2px);
+}
+
+.close-btn {
+    width: 100%;
+    padding: 13px;
+    background: #f1f1f4;
+    color: #555;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 40px;
+}
+
+@media(max-width: 550px) {
+    .container {
+        margin: 28px auto;
+    }
+
+    .login-screen {
+        margin: 50px auto;
+        padding: 27px 22px;
+    }
+
+    .gift-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .gift-card {
+        padding: 20px 10px;
+    }
+
+    .gift-emoji {
+        width: 85px;
+        height: 85px;
+        font-size: 48px;
+        border-radius: 24px;
+    }
+
+    .gift-card h3 {
+        font-size: 14px;
+    }
+
+    .welcome h1 {
+        font-size: 21px;
+    }
+
+    .gift-modal {
+        padding: 22px 17px;
+    }
+}
+
+@media(max-width: 350px) {
+    .gift-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">My gifs</div>
+    <div class="header-label">BsGifter</div>
+</header>
+
+<main class="container">
+
+    <!-- LOGIN -->
+
+    <section class="login-screen" id="loginScreen">
+
+        <div class="login-icon">🎁</div>
+
+        <h1>Something for You</h1>
+
+        <p class="subtitle">
+            Someone has sent you something special.
+            Enter your account password to discover your gifts.
+        </p>
+
+        <div class="password-wrap">
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                onkeydown="if(event.key==='Enter') login()"
+            >
+
+            <button
+                class="show-password"
+                type="button"
+                onclick="togglePassword()"
+            >SHOW</button>
+
+        </div>
+
+        <button class="primary-btn" onclick="login()">
+            Unlock Gifts →
+        </button>
+
+        <div class="error" id="loginError"></div>
+
+        <div class="footer">Powered by BS&MFI</div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard" id="dashboard">
+
+        <div class="welcome">
+
+            <div>
+                <h1 id="welcomeName">Welcome!</h1>
+                <p>Your gifts are waiting to be opened.</p>
+            </div>
+
+            <button class="logout" onclick="logout()">
+                ↪ Logout
+            </button>
+
+        </div>
+
+        <div class="summary">
+
+            <div>
+                <h2>Your Gifts 🎁</h2>
+                <p>Open a gift to discover what's inside.</p>
+            </div>
+
+            <div class="summary-count" id="giftCount">0</div>
+
+        </div>
+
+        <h2 class="section-title">Received Gifts</h2>
+
+        <div class="gift-grid" id="giftGrid"></div>
+
+        <div class="footer">
+            © BsGifter· Powered by BS&MFI
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- GIFT REVEAL POPUP -->
+
+<div class="modal-overlay" id="giftModal">
+
+    <div class="gift-modal">
+
+        <div class="modal-top-emoji">🎁</div>
+
+        <h2 id="modalTitle">A Gift For You</h2>
+
+        <div class="modal-from" id="modalFrom"></div>
+
+        <img
+            src=""
+            alt="Gift offer"
+            class="offer-image"
+            id="offerImage"
+        >
+
+        <div class="message-box">
+
+            <div class="message-label">
+                A MESSAGE FOR YOU
+            </div>
+
+            <div class="message-text" id="modalMessage"></div>
+
+            <div class="message-actions">
+                <button class="copy-message-btn" id="copyMessageBtn" type="button" onclick="copyGiftMessage()">
+                    Copy message
+                </button>
+            </div>
+
+        </div>
+
+        <div class="modal-date" id="modalDate"></div>
+
+        <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="visit-btn"
+            id="visitBtn"
+        >
+            Visit Offer →
+        </a>
+
+        <button class="close-btn" onclick="closeGift()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+const USERS = [
+    {
+        id: "deepak",
+        name: "Deepak",
+        password: "Deepak@1",
+
+        gifts: [
+
+            {
+                id: "gift2",
+
+                title: "A Special Gift",
+
+                from: "Phanindra Yerra",
+
+                message: "]v+C_x",
+
+               value: "https://mfi0212.github.io/mfi.f/special.offer/offer.png",
+                url: "https://mfi0212.github.io/mfi.f/special.offer/program.x",
+                date: "25 November 2026"
+
+            }
+
+        ]
+    }
+
+];
+
+
+/* =====================================
+   VARIABLES
+===================================== */
+
+let currentUser = null;
+
+const loginScreen = document.getElementById("loginScreen");
+const dashboard = document.getElementById("dashboard");
+const passwordInput = document.getElementById("passwordInput");
+
+
+/* =====================================
+   PASSWORD VISIBILITY
+===================================== */
+
+function togglePassword() {
+
+    const input = passwordInput;
+
+    input.type = input.type === "password"
+        ? "text"
+        : "password";
+
+    document.querySelector(".show-password").textContent =
+        input.type === "password" ? "SHOW" : "HIDE";
+
+}
+
+
+/* =====================================
+   LOGIN
+===================================== */
+
+function login() {
+
+    const password = passwordInput.value.trim();
+
+    const error = document.getElementById("loginError");
+
+    if (!password) {
+
+        error.textContent = "Enter your password.";
+
+        return;
+
+    }
+
+    const user = USERS.find(
+        account => account.password === password
+    );
+
+    if (!user) {
+
+        error.textContent = "Incorrect password. Try again.";
+
+        return;
+
+    }
+
+    currentUser = user;
+
+    error.textContent = "";
+
+    passwordInput.value = "";
+
+    loginScreen.style.display = "none";
+
+    dashboard.style.display = "block";
+
+    document.getElementById("welcomeName").textContent =
+        "Welcome, " + user.name + "!";
+
+    renderGifts();
+
+}
+
+
+/* =====================================
+   LOGOUT
+===================================== */
+
+function logout() {
+
+    currentUser = null;
+
+    dashboard.style.display = "none";
+
+    loginScreen.style.display = "block";
+
+    passwordInput.value = "";
+
+    passwordInput.type = "password";
+
+    document.querySelector(".show-password").textContent = "SHOW";
+
+    document.getElementById("loginError").textContent = "";
+
+    closeGift();
+
+}
+
+
+/* =====================================
+   OPENED GIFT STORAGE
+===================================== */
+
+function getOpenedGifts() {
+
+    if (!currentUser) return [];
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "bsmfi_gifts_" + currentUser.id
+            )
+        ) || [];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+function saveOpenedGift(giftId) {
+
+    const opened = getOpenedGifts();
+
+    if (!opened.includes(giftId)) {
+
+        opened.push(giftId);
+
+    }
+
+    localStorage.setItem(
+        "bsmfi_gifts_" + currentUser.id,
+        JSON.stringify(opened)
+    );
+
+}
+
+
+/* =====================================
+   SAFE TEXT
+===================================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+
+    })[char]);
+
+}
+
+
+/* =====================================
+   RENDER GIFT BOXES
+===================================== */
+
+function renderGifts() {
+
+    const grid = document.getElementById("giftGrid");
+
+    const gifts = currentUser.gifts;
+
+    const opened = getOpenedGifts();
+
+    document.getElementById("giftCount").textContent =
+        gifts.length;
+
+    grid.innerHTML = "";
+
+    if (!gifts.length) {
+
+        grid.innerHTML = `
+
+            <div class="empty">
+                <div>🎁</div>
+                <h3>No gifts yet</h3>
+                <p>When someone sends you a gift, it will appear here.</p>
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    gifts.forEach(gift => {
+
+        const isOpened = opened.includes(gift.id);
+
+        const card = document.createElement("div");
+
+        card.className = "gift-card";
+
+        card.innerHTML = `
+
+            <button class="gift-click" type="button">
+
+                <div class="gift-emoji">🎁</div>
+
+                <h3>${escapeHTML(gift.title)}</h3>
+
+                <div class="gift-from">
+                    From: <strong>${escapeHTML(gift.from)}</strong>
+                </div>
+
+                <div class="gift-date">
+                    ${escapeHTML(gift.date)}
+                </div>
+
+                <div class="tap-text">
+                    TAP TO OPEN →
+                </div>
+
+                <span class="gift-status ${isOpened ? "opened" : ""}">
+                    ${isOpened ? "OPENED" : "NEW GIFT"}
+                </span>
+
+            </button>
+
+        `;
+
+        card.querySelector(".gift-click").addEventListener(
+            "click",
+            () => revealGift(gift)
+        );
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+/* =====================================
+   REVEAL GIFT
+===================================== */
+
+function revealGift(gift) {
+
+    document.getElementById("modalTitle").textContent =
+        gift.title;
+
+    document.getElementById("modalFrom").textContent =
+        "Sent to you by " + gift.from;
+
+    document.getElementById("modalMessage").textContent =
+        gift.message || "Enjoy your special gift!";
+
+    document.getElementById("modalDate").textContent =
+        "Sent on " + gift.date;
+
+    const image = document.getElementById("offerImage");
+
+    if (gift.value) {
+
+        image.src = gift.value;
+
+        image.style.display = "block";
+
+        image.onerror = function() {
+            this.style.display = "none";
+        };
+
+    } else {
+
+        image.removeAttribute("src");
+
+        image.style.display = "none";
+
+    }
+
+    const visitBtn = document.getElementById("visitBtn");
+
+    let validUrl = false;
+
+    try {
+
+        const parsed = new URL(gift.url);
+
+        validUrl = ["https:", "http:"].includes(parsed.protocol);
+
+        if (validUrl) {
+            visitBtn.href = parsed.href;
+        }
+
+    } catch (error) {
+
+        validUrl = false;
+
+    }
+
+    visitBtn.style.display = validUrl ? "block" : "none";
+
+    saveOpenedGift(gift.id);
+
+    document.getElementById("giftModal").classList.add("active");
+
+    renderGifts();
+
+}
+
+
+/* =====================================
+   COPY GIFT MESSAGE
+===================================== */
+
+async function copyGiftMessage() {
+    const message = document.getElementById("modalMessage").textContent;
+    const button = document.getElementById("copyMessageBtn");
+    const originalText = "Copy message";
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(message);
+        } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = message;
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.select();
+            const copied = document.execCommand("copy");
+            textArea.remove();
+            if (!copied) throw new Error("Copy failed");
+        }
+
+        button.textContent = "Copied ✓";
+        button.style.color = "#23964c";
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.color = "";
+        }, 1600);
+    } catch (error) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = originalText, 1600);
+    }
+}
+
+
+/* =====================================
+   CLOSE GIFT
+===================================== */
+
+function closeGift() {
+
+    document.getElementById("giftModal").classList.remove("active");
+
+}
+
+
+/* =====================================
+   OUTSIDE CLICK
+===================================== */
+
+document.getElementById("giftModal").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+            closeGift();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
