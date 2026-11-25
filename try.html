@@ -33,7 +33,7 @@ a {
       --success: #4caf50;
       --danger: #e53935;
       --warning: #ff9800;
-      --radius: 10px;
+      --radius: 25px;
       --nav-height: 56px;
       --header-height: 56px;
     }
@@ -277,10 +277,11 @@ svg {
     }
 
     nav.bottom-nav button.active {
-      color: var(--primary);
-    border-radius: 14px;
-    font-weight: 900;
+          color: white;
+    border-radius: 999px;
+    font-weight: 400;
     font-size: 11px;
+    background: var(--primary);
     }
     nav.bottom-nav button svg {
       transition: transform 0.18s ease;
@@ -726,11 +727,10 @@ display: none;
     right: 5px;
     top: 5px;
     width: min(155px, calc(100vw - 24px));
-    padding: 0;
+    padding: 1px;
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+    border-radius: 20px;
 }
     .header-menu.open { display: block; }
     .header-menu button,.header-menu a {
@@ -743,7 +743,7 @@ display: none;
     color: var(--text);
     font-size: 16px;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 20px;
     }
     .header-menu button:active, .header-menu button:hover,
     .header-menu a:active, .header-menu a:hover { background: var(--bg-secondary); }
@@ -944,9 +944,6 @@ display: none;
     .color-picker-row { gap: 14px; }
     .color-swatch { width: 30px; height: 30px; }
     .color-custom-wrap, input[type="color"] { display: none !important; }
-    nav.bottom-nav button.active {
-        border-radius: 9px;
-    }
     body:not(.light) {
       --bg: #000000;
       --bg-secondary: #101010;
