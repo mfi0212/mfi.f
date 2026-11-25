@@ -229,7 +229,11 @@ svg {
     justify-content: center;
     align-items: center;
     }
-
+.back-btn{
+      display: block;
+    padding: 5px 0px 0px;
+    margin-left: -10px;
+}
     header .title {
       flex: 1;
       font-size: 17px;
@@ -339,7 +343,9 @@ svg {
       font-weight: 500;
       margin-bottom: 3px;
     }
-
+div#loan-list {
+    padding: 10px;
+}
     .loan-info p {
       font-size: 13px;
       color: var(--text-secondary);
@@ -606,17 +612,17 @@ button.chat-solution-ad {
     border: none;    width: 100%;
 }
     .special-notice {
-        padding: 15px;
+       padding: 15px;
     margin: 0;
-    border-radius: var(--radius);
     font-size: 15px;
     display: none;
     line-height: 22px;
+    text-align: center;
+    background: var(--bg-secondary);
     }
 
     .custom-content {
       margin: 0;
-      border-radius: var(--radius);
       overflow: hidden;
       display: none;
     }
@@ -982,7 +988,7 @@ display: none;
   <!-- APP -->
   <div id="app">
     <header id="app-header">
-      <button class="back-btn" id="back-btn" style="display:none;padding: 2px 0 0 0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M7.37,12.75l5.17,5.17q0.22,0.22 0.22,0.52t-0.24,0.53Q12.29,19.19 12,19.2t-0.53-0.22L5.13,12.63q-0.14-0.14-0.2-0.3T4.88,12t0.06-0.34t0.2-0.3l6.34-6.34q0.21-0.21 0.51-0.21t0.54,0.21q0.23,0.23 0.23,0.53T12.53,6.1L7.37,11.25H18.75q0.32,0 0.53,0.22T19.5,12t-0.22,0.53t-0.53,0.22H7.37Z"/></svg></button>
+      <button class="back-btn" id="back-btn" style="padding: 4px 0 0 0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M7.37,12.75l5.17,5.17q0.22,0.22 0.22,0.52t-0.24,0.53Q12.29,19.19 12,19.2t-0.53-0.22L5.13,12.63q-0.14-0.14-0.2-0.3T4.88,12t0.06-0.34t0.2-0.3l6.34-6.34q0.21-0.21 0.51-0.21t0.54,0.21q0.23,0.23 0.23,0.53T12.53,6.1L7.37,11.25H18.75q0.32,0 0.53,0.22T19.5,12t-0.22,0.53t-0.53,0.22H7.37Z"/></svg></button>
       <div class="header-heading">
         <div class="title" id="header-title">Amounts</div>
         <div class="subtitle" id="header-sub"></div>
