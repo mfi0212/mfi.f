@@ -86,6 +86,13 @@ const OFFER_END   = new Date("2026-11-27T20:30:00");
     document.getElementById("password").addEventListener("keypress", function(e) {
       if (e.key === "Enter") checkEligibility();
     });
+        function goBack() {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    alert("Back button clicked!\n\n(In a real app this would take you to previous screen or home.)");
+  }
+}
   </script>
 </body>
 </html>
