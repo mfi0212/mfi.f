@@ -33,7 +33,7 @@ a {
       --success: #4caf50;
       --danger: #e53935;
       --warning: #ff9800;
-      --radius: 12px;
+      --radius: 10px;
       --nav-height: 56px;
       --header-height: 56px;
     }
@@ -849,18 +849,19 @@ display: none;
     }
     .settings-list { padding-bottom: 60px; }
     nav.bottom-nav {
-       position: relative;
+      position: relative;
     inset: auto;
     flex: 0 0 auto;
     min-height: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px));
     height: auto;
-    width: 95%;
+    width: 80%;
     z-index: 20;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 5px;
     margin: 10px;
     border-radius: 99px;
     background: var(--bg-secondary);
+    max-width: 400px;
     }
     nav.bottom-nav button {
       min-width: 0;
@@ -920,8 +921,6 @@ display: none;
       .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
-    /* BS & MFI Lite: flatter, simpler interface */
-    :root { --radius:0px; }
     .login-card, .loan-item, .service-card, .settings-section,
     .borrow-apply-card, .fee-calculator-launch, .fee-result,
     .modal, .header-menu {
