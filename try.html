@@ -14,6 +14,8 @@
 	font-family: 'Inter', system-ui, -apple-system, sans-serif;
 	margin:0; padding:0;box-sizing: border-box;
 	letter-spacing: 0.4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-tertiary) transparent;
 }
     :root {
          --primary: blue;
@@ -63,7 +65,6 @@ a {
       flex-direction: column;
     }
 
-    /* ========== LOGIN ========== */
     #login-view {
       display: flex;
       flex-direction: column;
@@ -242,12 +243,11 @@ button,input,a{
 }
 
     header .title {
-      flex: 1;
       font-size: 17px;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     }
 span.menu-option-icon {
     display: inline-flex;
@@ -316,15 +316,18 @@ nav.bottom-nav button:active {
     }
 
     .view.active {
-      display: flex;
+     display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
     }
 .loan-list {
-    padding: 10px;
+    padding: 5px 10px;
 }
 
     .loan-item {
-    border-radius: 25px;
-    padding: 10px;
+   border-radius: 20px;
+    padding: 10px 7px;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -405,7 +408,7 @@ nav.bottom-nav button:active {
     }
 
     .msg {
-     padding: 12px;
+     padding: 12px 12px 5px 12px;
     border-radius: 20px;
     font-size: 15px;
     line-height: 20px;
@@ -509,24 +512,37 @@ content: "";
     overflow: scroll;
     height: 83vh;
     }
-
+.header-heading {
+    transition: transform .18s ease, background .18s ease;
+    box-shadow: inset 0.8px 0.8px 0px 0px #ffffff17, inset -0.8px -0.8px 0px 0px #ffffff17;
+    filter: drop-shadow(0px 0px 6px #0000002b);
+    background: var(--bg-secondary);
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border-radius: 999px;
+    padding: 0 20px;
+    gap: 0;
+    justify-content: center;
+}
     .service-card {
      background: var(--bg-secondary);
     border-radius: 20px;
     padding: 20px 15px;
     text-align: center;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: all 0.2s ease-in-out;
     border: 1px solid transparent;
     }
-
-    .service-card:active {
-      background: var(--bg-tertiary);
+    .service-card:active{
+      transform: scale(0.98);
     }
-
-    .service-card.disabled {
-      opacity: 40%;
-      cursor: not-allowed;
+.service-card.disabled {
+    opacity: 25%;
+    cursor: not-allowed;
+    z-index: -1;
     }
 
     .service-card .icon {
@@ -759,7 +775,6 @@ span.menu-option-icon svg {
       color: white;
     }
 
-    .header-heading { flex: 1; min-width: 0; }
     .header-more {
       width: 45px;
 height: 45px;
@@ -778,13 +793,16 @@ height: 45px;
     .header-more:active { background: var(--bg-tertiary); }
 
     .borrow-tools {
-      width: 100%;
+     width: 100%;
     max-width: 900px;
     margin: 0 auto;
     padding: 10px 10px 0 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;}
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
     .borrow-apply-card,
     .fee-calculator-launch  {
         grid-column: 1 / -1;
@@ -823,14 +841,21 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     #borrow-search { margin-bottom: 4px;
     background: var(--bg-secondary);
     border: none;
-    padding: 12px 20px;
-    width: 100%;
-    font-size: 17px;color: var(--text);
-    backdrop-filter: blur(2px);    outline: none;
+    padding: 8px 20px;
+    width: 95%;
+    font-size: 15px;
+    color: var(--text);
+    backdrop-filter: blur(2px);
+    outline: none;max-width: 400px;
     box-shadow: inset 0.8px 0.8px 0px 0px #ffffff17, inset -0.8px -0.8px 0px 0px #ffffff17;
     filter: drop-shadow(0px 0px 6px #0000002b);
-    border-radius: 999px;}
-   
+    border-radius: 999px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;}
+  #borrow-search:focus{
+    width: 100%;font-size: 17px;
+     padding: 12px 20px;max-width: 600px;
+  }
     .fee-calculator-launch > span:first-child {
       width:40px; height:40px; flex:0 0 40px; display:grid; place-items:center;
       border-radius:12px; background:color-mix(in srgb,var(--primary) 16%,transparent);
@@ -845,12 +870,14 @@ color-mix(in srgb, var(--primary) 18%, transparent);
     .fee-result-row.total { border-top:1px solid var(--border); margin-top:6px; padding-top:13px; font-weight:700; font-size:16px; }
     .fee-rate-note { color:var(--text-secondary); font-size:12px; margin-top:8px; line-height:1.5; }
     .chat-solution-ad-wrap {
-     padding: 5px 10px 0 10px;
+    padding: 5px 10px 0 10px;
     position: sticky;
     top: 65px;
     z-index: 1;
     margin-top: 0;
     border-radius: 0 0 86px 90px;
+    width: 100%;
+    max-width: 600px;
   }
     button.chat-solution-ad div {
   width: 2.5px;
@@ -906,7 +933,7 @@ width: 100%;
     font-size: 17px;
     font-weight: 700;
     cursor: pointer;
-    color: white;
+    color: var(--text);
     max-width: 535px;
     }
     .chat-share-btn:hover{ 
@@ -949,7 +976,7 @@ width: 100%;
       overflow-y: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 0;scrollbar-width: none;
+      padding-bottom: 0;
     }
     .view {
       height: auto;
@@ -961,16 +988,19 @@ width: 100%;
     .view.active { display: flex; }
     #view-amounts, #view-borrow, #view-settings { overflow: visible; }
     .loan-list, .services-grid, .settings-list {
-     height: auto;
+    height: auto;
     min-height: 0;
     overflow: visible;
     width: 100%;
     padding-bottom: 75px;
+    max-width: 900px;
     }
     .services-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-content: start;
     padding: 10px 10px 100px 10px;
+    width: 100%;
+    max-width: 900px;
     }
     nav.bottom-nav {
      align-self: center;
@@ -1050,6 +1080,8 @@ width: 100%;
     text-align: center;
     padding: 15px 10px;
     border: none;
+    display: flex;
+    justify-content: space-between;
     }
      #app-header::before {
     content: "";
@@ -1063,7 +1095,6 @@ width: 100%;
     backdrop-filter: blur(10px);
     -webkit-mask-image: linear-gradient( to bottom, black 0%, black 40%, rgb(0 0 0 / 94%) 65%, transparent 100% );
 }
-    #app-header .title { font-size: 16px; letter-spacing: -.2px; }
     #app-header .subtitle { margin-top: 2px; }
     .header-more {
      width: 45px;
@@ -1534,7 +1565,7 @@ position: absolute;
   <!-- APP -->
   <div id="app">
     <header id="app-header">
-      <button class="back-btn" id="back-btn" style="display:none;padding: 2px 0 0 0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M9.18,12l7.53,7.53q0.3,0.3 0.29,0.7t-0.31,0.7T16,21.23t-0.7-0.3L7.63,13.28q-0.27-0.27-0.4-0.61T7.09,12t0.13-0.67t0.4-0.61L15.3,3.05q0.3-0.3 0.71-0.29t0.71,0.31t0.3,0.7t-0.3,0.7L9.18,12Z"/></svg></button>
+      <button class="back-btn" id="back-btn" style="padding: 2px 0 0 0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M9.18,12l7.53,7.53q0.3,0.3 0.29,0.7t-0.31,0.7T16,21.23t-0.7-0.3L7.63,13.28q-0.27-0.27-0.4-0.61T7.09,12t0.13-0.67t0.4-0.61L15.3,3.05q0.3-0.3 0.71-0.29t0.71,0.31t0.3,0.7t-0.3,0.7L9.18,12Z"/></svg></button>
       <div class="header-heading">
         <div class="title" id="header-title">Amounts</div>
         <div class="subtitle" id="header-sub"></div>
@@ -1546,7 +1577,8 @@ position: absolute;
     <main id="main">
       <!-- AMOUNTS VIEW -->
       <div class="view active" id="view-amounts">
-        <div class="special-notice" id="special-notice"></div>
+        <div class="special-notice" id="special-notice" style="    position: sticky;
+    top: 70px;"></div>
         <div class="custom-content" id="custom-content"></div>
         <div class="loan-list" id="loan-list"></div>
       </div>
@@ -1563,11 +1595,11 @@ position: absolute;
 
       <div class="view" id="view-borrow">
         <div class="borrow-tools" style="position: sticky;
-    top: 55px;">
-          <input type="search" id="borrow-search" placeholder="Search borrowing solutions..." aria-label="Search borrowing solutions" />
+    top: 63px;">
+          <input type="search" id="borrow-search" placeholder="Search here..." aria-label="Search borrowing solutions" />
         </div>
-        <div class="borrow-tools">
-          <button class="borrow-apply-card" id="borrow-apply" type="button">
+        <div class="borrow-tools" style="display: none;">
+          <button class="borrow-apply-card" id="borrow-apply" type="button" style="display: none;">
             <span class="borrow-apply-icon">＋</span>
             <span><strong>Apply for an amount</strong><small>Request the amount you need</small></span>
             <span class="borrow-apply-arrow">›</span>
@@ -1787,11 +1819,6 @@ const CHAT_SERVICES = [
     url: "https://mfi0212.github.io/mfi.f/v/solutions/botpay"
   }
 ];
-
-
-/* =====================================================
-   SVG ICONS
-===================================================== */
 
 const CHAT_ICONS = {
   menu: `
@@ -3599,7 +3626,7 @@ function switchView(view, updateNav = true) {
   if (target) target.classList.add("active");
 
   if (updateNav) {
-    document.getElementById("back-btn").style.display = "none";
+    // document.getElementById("back-btn").style.display = "none";
 
     configureBottomNav();
 
@@ -3716,7 +3743,7 @@ function configureHeaderMenu() {
       {
         label: "Amount",
         icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#FFFFFF"><path d="M11.47,20.28q-0.22-0.22-0.22-0.53v-7h-7q-0.32,0-0.53-0.22T3.5,12t0.22-0.53t0.53-0.22h7v-7q0-0.32 0.22-0.53T12,3.5t0.53,0.22t0.22,0.53v7h7q0.32,0 0.53,0.22T20.5,12t-0.22,0.53t-0.53,0.22h-7v7q0,0.32-0.22,0.53T12,20.5t-0.53-0.22Z"/></svg>`,
-        href: "https://mfi0212.github.io/mfi.f/takemoney"
+        href: "https://mfi0212.github.io/mfi.f/apply.divert"
       }
     ],
 
